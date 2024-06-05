@@ -26,7 +26,7 @@
                                     <option value="" style="text-align: center;">--- Choisir un niveau ---</option>
                                     <!-- affiche les niveaux ajoutée par l'utilisateur à la suites des niveaux déjà existante -->
                                     <?php
-                                        $query = $lien->prepare("SELECT * FROM niveauEtud");
+                                        $query = $lien->prepare("SELECT * FROM niveauetud");
                                         $query->execute();
                                         
                                         while($row = $query->fetch()) {
