@@ -15,9 +15,6 @@
                     <input type="email" id="mail" name="mail" placeholder="Adresse Mail (ex : exemple@exemple.fr)" required style="text-align: center;"/>
                     <input type="password" name="mdp" minlength="8" placeholder="Mot de passe" required style="text-align: center;">
                     <input type="submit" value="Se connecter" name="boutton-valider">
-                    <p>
-                        Pas de compte? Créez en un <a href="./inscription_eleve.php"> ici <a>
-                    </p>
                 </form>
             </div>
         </section>

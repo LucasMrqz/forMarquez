@@ -1,5 +1,6 @@
 <?php
 require_once 'co_bdd.php';
+require_once './hash_mdp.php';
 session_start();
 
 if(isset($_POST['boutton-valider'])){

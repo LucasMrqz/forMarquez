@@ -11,8 +11,20 @@
         <section class="about">
             <div class="container">
                 <h1>Page de confirmation de paiement</h1>
-                <form class="contact-form" action="./action_co_eleve.php" method="POST"> <!-- Dans ce formulaire, on demande à l'utilisateur son login et son mot de passe--->
+                <form class="contact-form" action="./action_payer.php" method="POST"> <!-- Dans ce formulaire, on demande à l'utilisateur son login et son mot de passe--->
                     <input type="email" id="mail" name="mail" placeholder="Adresse Mail (ex : exemple@exemple.fr)" required style="text-align: center;"/>
+                    <?php
+                    require_once './co_bdd.php';
+                            $query_payer = $lien->prepare("SELECT * FROM paiement");
+                            $query_payer->execute();
+                            
+                            echo "<label for='idPaiement'>Choississez le type de paiment souhaiter :</label>";
+                            echo '<select id="idPaiement" name="idPaiement" required>';
+                            echo '<option value="" style="text-align: center;">--- Choisir le type de paiment ---</option>';
+                            while($rowan = $query_payer->fetch()) {
+                                echo "<option value='{$rowan["idPaiement"]}' style='text-align: center;'> {$rowan["moyenPaiement"]} </option>";
+                            }
+                        ?>
                     <input type="password" name="mdp" minlength="8" placeholder="Mot de passe" required style="text-align: center;">
                     <input type="submit" value="Se connecter" name="boutton-valider">
                 </form>
